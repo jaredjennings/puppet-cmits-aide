@@ -16,6 +16,9 @@
 # \section{Host-based intrusion detection with AIDE}
 # \label{aide}
 #
+#t <#190> cybercompliance:implements rhel5stig:SV-34549r2_rule .
+#t <#190> cybercompliance:implements rhel6stig:SV-65601r1_rule .
+#t <#190> cybercompliance:implements rhel6stig:SV-50290r1_rule .
 # \implements{unixsrg}{GEN000140,GEN006480}%
 # \implements{rhel5stig}{GEN000140-2}%
 # Install and configure the Advanced Intrusion Detection Environment (AIDE)
@@ -31,6 +34,7 @@
 # \implements{unixsrg}{GEN002380,GEN002440} Document setuid and setgid files,
 # by including them in the baseline of system files.
 #
+#t <#370> cybercompliance:implements <http://securityrules.info/id/xemez-rigar-kebav-zymix/SV-50468r2_rule> .
 # \implements{unixsrg}{GEN006560} Notify admins of possible intrusions via
 # syslog. Remote logging ensures timely notification; for details,
 # see~\S\ref{module_log}.

@@ -20,6 +20,7 @@ class aide::redhat {
         ensure => present,
     }
 
+#t <#230> cybercompliance:implements <http://securityrules.info/id/xemez-rigar-kebav-zymix/SV-65601r1_rule> .
 # \implements{unixsrg}{GEN000140,GEN006570,GEN006571,GEN006575}%
 # Install the
 # prescribed configuration for AIDE, causing it to baseline device files,
