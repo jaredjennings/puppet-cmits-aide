@@ -39,5 +39,6 @@
 # adequately for our needs.
 
 class aide {
-    include "aide::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "aide::${lower_osfamily}"
 }
