@@ -32,11 +32,13 @@ class aide::redhat {
     file { "/etc/aide.conf":
         owner => root, group => 0, mode => '0600',
         source => "puppet:///modules/aide/aide.conf",
+        require => Package['aide'],
     }
 
 # Warn if the aide binary changes.
     file { "/usr/sbin/aide":
         audit => all,
+        require => Package['aide'],
     }
 
 # \implements{unixsrg}{GEN000220,GEN002400,GEN002460}%
@@ -48,6 +50,7 @@ class aide::redhat {
         hour => 2,
         minute => 2,
         weekday => 0,
+        require => Package['aide'],
     }
 
 # Make sure aide's logs are rotated.
@@ -55,6 +58,7 @@ class aide::redhat {
     augeas { "aide_weekly":
         context => "/files/etc/logrotate.d/aide/rule",
         changes => "set schedule weekly",
+        require => Package['aide'],
     }
 
 # Since aide is run by logrotate, make sure logrotate is working.
